@@ -1,0 +1,46 @@
+.formPost{
+    width:  100%;
+    max-width: 1120px;
+    height: 70vh;
+    background-color: white;
+    border-radius: 10px; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 10px, 10px, 10px, 10px rgb(71, 71, 71);
+}
+
+.formPost input{
+    margin-top: 20px;
+    width: 80%;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+
+.formPost textarea{
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 70%;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    border-radius: 8px;
+}
+
+.formPost button{
+   cursor: pointer;
+   width: 20%;
+   height: 10%;
+   float: right;
+   background-color: #ec2300;
+   color: white;
+   margin-right: 60px;
+}

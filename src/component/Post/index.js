@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './style.css';
 import { firebaseFirestore } from '../../config/firebase';
 
 function Post() {
@@ -20,9 +20,8 @@ function Post() {
     }
 
     return (
-        <div>
-            <h1>Meus posts</h1>
-            <form onSubmit={addPost}>
+        <div> 
+            <form className='formPost' onSubmit={addPost}>
                 <input
                     type="text"
                     placeholder="Usuário"

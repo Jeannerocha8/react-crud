@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { firebaseFirestore } from '../../config/firebase';
-
+import './style.css';
 function ListPost() {
     const [posts, setPosts] = useState([]);
-
 
     useEffect(() => {
         loadPosts();
     }, []);
-
-
 
     function loadPosts() {
         console.log('Carregando posts ...');
@@ -24,18 +21,21 @@ function ListPost() {
             });
     }
 
-
-
     return (
-        <div>
-            <h1>Minha lista de posts</h1>
-            <ul>
+        <div className ="listaPost">
+
+            <ul> 
                 {posts.map(post => (
                     <div key={post.id}>
-                        <h3> {post.id} </h3>
+                        <li className ='posts'>
+                            <h3> {post.id} </h3>
+                            <div>
+                                <button>Editar</button>
+                                <button>Excluir</button>
+                            </div>
+                        </li>
                     </div>
-                    
-                ))}
+                ))}                
             </ul>
         </div>
     );
