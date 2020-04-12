@@ -1,7 +1,6 @@
 .formPost{
-    width:  100%;
-    max-width: 1120px;
-    height: 70vh;
+    width:  70%;
+    height: 40vh;
     background-color: white;
     border-radius: 10px; 
     margin-left: auto;
@@ -9,7 +8,8 @@
     margin-top: 40px;
     align-items: center;
     justify-content: center;
-    box-shadow: 10px, 10px, 10px, 10px rgb(71, 71, 71);
+    box-shadow: 10px, 10px, 10px, 10px rgb(31, 31, 31);
+    padding: 5px;
 }
 
 .formPost input{
@@ -26,7 +26,7 @@
     align-items: center;
     justify-content: center;
     width: 80%;
-    height: 70%;
+    height: 40%;
     margin-top: 30px;
     margin-bottom: 15px;
     margin-left: auto;
@@ -37,10 +37,20 @@
 
 .formPost button{
    cursor: pointer;
-   width: 20%;
-   height: 10%;
+   width: 10%;
+   height: 15%;
    float: right;
    background-color: #ec2300;
    color: white;
-   margin-right: 60px;
+   margin-right: 10% ! important;
 }
+
+
+@media (max-width: 575.98px) {
+
+    .formPost button{
+       width: 20% !important;
+    }
+ }
+
+
