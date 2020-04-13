@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { firebaseFirestore } from '../../config/firebase';
 import './style.css';
+
+
 function ListPost() {
     const [posts, setPosts] = useState([]);
+   
 
-    useEffect(() => {
+   useEffect(() => {
         loadPosts();
     }, []);
 
-    function loadPosts() {
-        console.log('Carregando posts ...');
+     function loadPosts() {
         firebaseFirestore.collection("post")
             .get()
             .then(({ docs }) => {
@@ -20,7 +22,7 @@ function ListPost() {
                 console.log('error', error.message);
             });
     }
-
+    
     return (
         <div className ="listaPost">
 
@@ -28,7 +30,7 @@ function ListPost() {
                 {posts.map(post => (
                     <div key={post.id}>
                         <li className ='posts'>
-                            <h3> {post.id} </h3>
+                            <h3> {post.data().post} </h3>
                             <div>
                                 <button>Editar</button>
                                 <button>Excluir</button>
