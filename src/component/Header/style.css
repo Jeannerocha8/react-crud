@@ -9,20 +9,51 @@
     margin: auto;
     margin-left: 8px;
     color: white;
+    font: 700  Roboto, sans-serif;
 }
 
-.headerOnDiary p{
-    width: 10%;
-    align-items: center;
+.headerOnDiary h3{
     color: white;
+    font-size: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 8%;
+    text-align: start;
+    }
+
+.headerOnDiary h3 .icon{
+    font-size: 40px;
 }
 
 .headerOnDiary button{
-    margin: 10px;
-    width: 10%;
-    height: 50px;
+    margin: 8px;
+    width: 4%;
+    height: 70%;
     background-color: white;
     color: #ec2300;
     margin: 8px;
-    border-radius: 4px;
+    border-radius: 8px;
+    font-size: 25px;
 }
+
+
+@media (max-width: 575.98px) {
+   .headerOnDiary button{
+       height: 60% !important;
+       width: 8% !important;
+       margin-top: auto;
+       margin-bottom: auto;
+   }
+
+   .headerOnDiary h3{
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 15px;
+   }
+
+
+   .headerOnDiary h3 .icon{
+       font-size: 25px;
+   }
+
+ }

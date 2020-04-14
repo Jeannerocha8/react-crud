@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { firebaseFirestore } from '../../config/firebase';
 import './style.css';
+import {FaTrash} from 'react-icons/fa';
+import {FaEdit} from 'react-icons/fa';
 
 
 function ListPost() {
@@ -31,10 +33,10 @@ function ListPost() {
                     <div key={post.id}>
                         <li className ='posts'>
                             <h3> {post.data().post} </h3>
-                            <div>
-                                <button>Editar</button>
-                                <button>Excluir</button>
-                            </div>
+                            
+                                <button><FaEdit/></button>
+                                <button><FaTrash/></button>
+                            
                         </li>
                     </div>
                 ))}                

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './style.css';
 import { firebaseFirestore } from '../../config/firebase';
-
+import  {FaSave} from 'react-icons/fa';
 function Post() {
     const [user, setUser] = useState('');
     const [post, setPost] = useState('');
@@ -13,9 +13,9 @@ function Post() {
             user: user,
             post: post
         }).then(() => {
-            console.log('Scesso')
+            alert('Salvo com sucesso');
         }).catch(error => {
-            console.log('Erro: ' + error.message)
+            alert('Erro: ' + error.message)
         });
     }
 
@@ -32,7 +32,7 @@ function Post() {
                     value={post}
                     onChange={e => setPost(e.target.value)}>
                 </textarea>
-                <button>Postar</button>
+                <button><FaSave className='icon'/> Save</button>
             </form>
         </div>
     );

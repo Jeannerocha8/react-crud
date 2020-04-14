@@ -17,13 +17,17 @@ ul{
 
 .posts button{
     cursor: pointer;
-    width: 10%;
-    height: 15%;
+    width: 4%;
+    height: 50%;
     float: right;
     background-color: #ec2300;
     color: white;
-    margin-right: 10% ! important;
+    margin-right: 2% ! important;
+    border-radius: 4px;
  }
+ 
+ 
+
 
 
  @media (max-width: 575.98px) {
@@ -32,10 +36,8 @@ ul{
      }
 
      .posts button{
-        width: 20% !important;
+        width: 8% !important;
+        height: 40% !important;
      }
 
-
   }
-
- 
