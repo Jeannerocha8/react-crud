@@ -1,43 +1,33 @@
-ul{
-    list-style: none;
-    list-style-type: none;
-}
-.posts {
-    width: 70%;
-    height: 10vh;
-    background-color: #fff;
+.listaPost {
+    width: 100%;
+    max-width:  500px;
+    margin: 0 auto;
+    margin-top: 10px;
+    background-color: white;
     border-radius: 10px;
-    margin-top: 40px;
-    margin-left: 12%;
-    box-shadow: 20px,20px,20px,20px #000000;
-    border-radius: 8px;
-    padding: 20px;
-    max-width: 1095px;
+    padding: 5px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.10), 0 10px 10px rgba(0, 0, 0, 0.10);
 }
 
-.posts button{
-    cursor: pointer;
-    width: 4%;
-    height: 50%;
-    float: right;
+.listaPost div {
+    display: flex; /* Filhos ficam inline */
+    flex-wrap: wrap; /* Caso precise, quebra linha */
+    justify-content: space-between; /* Tipo de espaçamento */
+}
+
+.listaPost button {
+    width: 50px;
+    font-size: 20px;
     background-color: #ec2300;
     color: white;
-    margin-right: 2% ! important;
+    padding: 5px 5px;
+    margin: 8px 0;
+    border: none;
     border-radius: 4px;
- }
- 
- 
-
-
+    cursor: pointer;
+    margin-right: 10px;
+}
 
  @media (max-width: 575.98px) {
-     .posts{
-        margin-left: 4% !important;
-     }
-
-     .posts button{
-        width: 8% !important;
-        height: 40% !important;
-     }
 
   }

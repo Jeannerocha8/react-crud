@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 import './style.css';
 import { firebaseFirestore } from '../../config/firebase';
-import  {FaSave} from 'react-icons/fa';
+import { FaSave } from 'react-icons/fa';
+
+
 function Post() {
     const [user, setUser] = useState('');
     const [post, setPost] = useState('');
 
+
     function addPost(e) {
         e.preventDefault();
-        console.log(user + post);
         firebaseFirestore.collection(`post`).add({
-            user: user,
-            post: post
+            date: Date.now(),
+            user,
+            post
         }).then(() => {
             alert('Salvo com sucesso');
         }).catch(error => {
@@ -20,7 +23,7 @@ function Post() {
     }
 
     return (
-        <div> 
+        <div>
             <form className='formPost' onSubmit={addPost}>
                 <input
                     type="text"
@@ -32,7 +35,12 @@ function Post() {
                     value={post}
                     onChange={e => setPost(e.target.value)}>
                 </textarea>
-                <button><FaSave className='icon'/> Save</button>
+                <div>
+                    <div></div>
+                    <div>
+                        <button><FaSave className='icon' /> Save</button>
+                    </div>
+                </div>
             </form>
         </div>
     );

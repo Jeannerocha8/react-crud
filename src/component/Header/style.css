@@ -1,59 +1,39 @@
 .headerOnDiary {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Caso precise, quebra linha */
     background-color: #ec2300;
-    width: 100%;
-    height: 70px;
+    margin-top: -20px;
+    margin: 0 auto;
+    color: white;
+    padding: 5px;
+}
+
+.headerOnDiary nav {
     display: flex;
 }
-.headerOnDiary h1{
-    width: 70%;
+
+.headerOnDiary nav .icon-user, 
+.headerOnDiary nav h3,
+.headerOnDiary nav button {
     margin: auto;
-    margin-left: 8px;
-    color: white;
-    font: 700  Roboto, sans-serif;
-}
-
-.headerOnDiary h3{
-    color: white;
-    font-size: 20px;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-right: 8%;
-    text-align: start;
-    }
-
-.headerOnDiary h3 .icon{
-    font-size: 40px;
-}
-
-.headerOnDiary button{
-    margin: 8px;
-    width: 4%;
-    height: 70%;
-    background-color: white;
-    color: #ec2300;
-    margin: 8px;
-    border-radius: 8px;
+    margin-left: 10px;
     font-size: 25px;
 }
 
+.headerOnDiary nav button {
+    background-color: white;
+    border-radius: 5px;
+    border-width: 0px;
+    cursor: pointer;
+}
 
-@media (max-width: 575.98px) {
-   .headerOnDiary button{
-       height: 60% !important;
-       width: 8% !important;
-       margin-top: auto;
-       margin-bottom: auto;
-   }
+.headerOnDiary nav button .icon-button {
+    color: #ec2300;
+    margin: 0 auto;
+    margin-top: 5px;
+}
 
-   .headerOnDiary h3{
-    margin-top: auto;
-    margin-bottom: auto;
-    font-size: 15px;
-   }
-
-
-   .headerOnDiary h3 .icon{
-       font-size: 25px;
-   }
+@media (max-width: 580px) {
 
  }

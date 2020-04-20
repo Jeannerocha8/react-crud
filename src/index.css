@@ -3,10 +3,30 @@
 body {
   margin: 0;
   font: 400 14px Roboto, sans-serif;
-  background: #d6d1d1;
+  background: #eeeeee;
+  outline: 0;
+  box-sizing:  border-box;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+ul {
+  list-style: none;
+  list-style-type: none;
+}
+
+button:hover {
+    transition: all 0.5s;
+    transform: scale(1.05);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+@media (max-width: 580px) {
+  button {
+    transform: scale(1.05);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
 }

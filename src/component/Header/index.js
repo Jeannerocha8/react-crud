@@ -1,14 +1,21 @@
 import React from 'react';
 import './style.css';
 import { FaUserCircle } from 'react-icons/fa';
-import {IoMdPower} from 'react-icons/io';
-function Header () {
+import { IoMdPower } from 'react-icons/io';
 
-    return(
+
+function Header() {
+    return (
         <header className='headerOnDiary'>
-            <h1>OnDiary</h1>
-            <h3><FaUserCircle className ="icon"/> User</h3>      
-            <button><IoMdPower className='iconUser'/></button>
+            <div>
+                <h1>OnDiary</h1>
+            </div>
+
+            <nav>
+                <FaUserCircle className="icon-user" />
+                <h3>User</h3>
+                <button><IoMdPower className="icon-button"/></button>
+            </nav>
         </header>
     );
 }

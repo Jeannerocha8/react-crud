@@ -8,8 +8,10 @@ function App() {
   return (
     <div>
       <Header></Header>
-      <Post></Post>
-      <ListPost></ListPost>
+      <div style={{padding:'15px'}}>
+        <Post></Post>
+        <ListPost></ListPost>
+      </div>
     </div>
   );
 }
