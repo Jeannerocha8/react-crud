@@ -8,19 +8,21 @@ function Post() {
     const [user, setUser] = useState('');
     const [post, setPost] = useState('');
 
-
-    function addPost(e) {
+   async function addPost(e)  {
         e.preventDefault();
-        firebaseFirestore.collection(`post`).add({
+      await  firebaseFirestore.collection(`post`).add({
             date: Date.now(),
             user,
             post
         }).then(() => {
             alert('Salvo com sucesso');
+           
         }).catch(error => {
             alert('Erro: ' + error.message)
-        });
+        });    
+
     }
+   
 
     return (
         <div>
@@ -38,12 +40,13 @@ function Post() {
                 <div>
                     <div></div>
                     <div>
-                        <button><FaSave className='icon' /> Save</button>
+                        <button ><FaSave className='icon' /> Save</button>
                     </div>
                 </div>
             </form>
         </div>
     );
 }
+
 
 export default Post;

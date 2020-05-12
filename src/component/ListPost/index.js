@@ -5,15 +5,15 @@ import { FaTrash, FaEdit } from 'react-icons/fa';
 import Moment from 'moment';
 
 
-function ListPost() {
+ function ListPost() {
     const [posts, setPosts] = useState([]);
 
-    useEffect(() => {
+     useEffect(() => {
         loadPosts();
     }, []);
 
-    function loadPosts() {
-        firebaseFirestore.collection("post").orderBy("date", "desc")
+    async function loadPosts() {
+       await firebaseFirestore.collection("post").orderBy("date", "desc")
             .get()
             .then(function (querySnapshot) {
                 var tempPosts = [];
@@ -25,6 +25,8 @@ function ListPost() {
             .catch((error) => {
                 console.log('error', error.message);
             });
+
+            loadPosts();
     }
 
     return (
@@ -32,8 +34,8 @@ function ListPost() {
             {posts.map(post => (
                 <div className="listaPost" key={post.id}>
                     <h3> {post.user} </h3>
-                    <span>{Moment(post.date).format('DD/MM/YYYY')}</span>
                     <p>{post.post}</p>
+                    <span>{Moment(post.date).format('DD/MM/YYYY')}</span>
                     <div>
                         <div></div>
                         <div>
