@@ -4,8 +4,8 @@ import './style.css';
 import { FaTrash, FaEdit } from 'react-icons/fa';
 import Moment from 'moment';
 
-
  function ListPost() {
+
     const [posts, setPosts] = useState([]);
 
      useEffect(() => {
@@ -29,18 +29,25 @@ import Moment from 'moment';
             loadPosts();
     }
 
+
+    const handleDelete = id => {
+        const deleteFirestore =  firebaseFirestore.collection("post").doc(id).delete();
+        alert("deletado com sucesso");
+    }
+
+
     return (
         <div className="list-container">
             {posts.map(post => (
                 <div className="listaPost" key={post.id}>
                     <h3> {post.user} </h3>
                     <p>{post.post}</p>
-                    <span>{Moment(post.date).format('DD/MM/YYYY')}</span>
+                    <span>{Moment(post.date).format('DD/MM/YYYY hh:mm')}</span>
                     <div>
                         <div></div>
                         <div>
-                            <button><FaEdit /></button>
-                            <button><FaTrash /></button>
+                            <button ><FaEdit /></button>
+                            <button onClick={() => handleDelete(post.id)}><FaTrash /></button>
                         </div>
                     </div>
                 </div>
