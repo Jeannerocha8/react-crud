@@ -36,4 +36,15 @@
 
 @media (max-width: 580px) {
 
+    .headerOnDiary nav .icon-user, 
+    .headerOnDiary nav h3,
+    .headerOnDiary nav button {
+        margin: auto;
+        margin-left: 4px;
+        font-size: 14px;
+    }
+    
+    .headerOnDiary h1 {
+        font-size: 14px;
+    }
  }
