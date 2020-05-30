@@ -4,7 +4,7 @@ import { firebaseAuth } from '../../config/firebase';
 import { useHistory } from "react-router";
 //import { withRouter } from 'react-router-dom';
 
- function Login() {
+function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const history = useHistory();
@@ -12,25 +12,51 @@ import { useHistory } from "react-router";
     async function Login(e) {
         e.preventDefault();
         try {
-            let resultAuth = await firebaseAuth().signInWithEmailAndPassword(email, password);
-            if(resultAuth){
-                history.push('/home');
+            if (email === '') {
+                alert('E-mail vazio, por favor insira um endereço de e-mail');
+            } else if (password === '') {
+                alert('Senha vazia, por favor insira uma senha');
+            } else {
+                let resultAuth = await firebaseAuth().signInWithEmailAndPassword(email, password);
+                if (resultAuth) {
+                    alert('usuário logado com sucesso');
+                    history.push('/home');
+                }
             }
         } catch (error) {
-            console.log(error);
+
+            if(error.message=='The password is invalid or the user does not have a password.'){
+                alert('e-mail ou senha incorretos');
+            }else if(error.message=='There is no user record corresponding to this identifier. The user may have been deleted.'){
+                alert('Usuário não localizado, faça o cadastro');
+            }
+            
         }
     }
 
-    async function Registrer(e){
+    async function Registrer(e) {
         e.preventDefault();
         try {
-            let cadAuth = await firebaseAuth().createUserWithEmailAndPassword(email, password);
-            alert('Cadastrado com sucesso');
-            console.log(cadAuth);
-            alert('Cadastrado com sucesso!');
-            history.push('/home');
+            if (email === '') {
+                alert('E-mail vazio, por favor insira um endereço de e-mail');
+            } else if (password === '') {
+                alert('Senha vazia, por favor insira uma senha');
+            } else {
+                let cadAuth = await firebaseAuth().createUserWithEmailAndPassword(email, password);
+                alert('Cadastrado com sucesso');
+                console.log(cadAuth);
+                alert('Cadastrado com sucesso!');
+                history.push('/home');
+            }
+
         } catch (error) {
-            alert('Erro, tente novamente', error);
+            if (error.message === 'The email address is badly formatted.') {
+                alert('Endereço de email invalido');
+            } else if (error.message === 'Password should be at least 6 characters') {
+                alert('A senha deve conter no minímo 6 caracteres');
+            }else if (error.message === 'The email address is already in use by another account.') {
+                alert('E-mail já cadastrado!');
+            }
         }
     }
 
